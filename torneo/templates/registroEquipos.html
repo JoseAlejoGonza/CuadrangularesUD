@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block body %}
+<style>
+	.align-table{
+		text-align: -webkit-center;
+	}
+	.color-text{
+		color: #ffff;
+	}
+</style>
+<div class=registroEquipos>
+	<form class="pure-form pure-form-stacked" action="{% url 'registroJuegos' %}" method=post>
+		{% csrf_token %}
+		<p class="color-text">Ingrese el nombre de los equipos:</p>
+		<div class="align-table">
+			<table class="pure-table pure-table-bordered">
+				<thead>
+					<tr>
+						<th>Equipo</th>
+						<th colspan="8">Nombre</th>
+					</tr>	
+				</thead>
+				<tbody>
+					{% for i in range_l %}
+					<tr>
+						<td class="color-text"> Equipo {{i}}</td>
+						<td><input id="team{{i}}" name="team{{i}}"+ type="text"></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<button type="submit" class="pure-button pure-button-primary">Siguiente</button>
+	</form>
+</div>
+{% endblock %}

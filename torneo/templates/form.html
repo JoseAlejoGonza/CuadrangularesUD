@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block body %}
+<style>
+	.align-items{
+		text-align: center;
+	}
+	.color-text{
+		color: #ffff;
+	}
+	.center-input{
+		width: 100%;
+		text-align: center;
+	}
+</style>
+<form class="pure-form pure-form-stacked align-items" action="{% url 'index' %}" method=post>
+	{% csrf_token %}
+	<label class="color-text" for="teams">
+	ingrese el numero de equipos (maximo 4)
+	</label>
+	<input class="center-input" id="teams" name="teams" type="number" min="2" max="4" required>
+	<button type="submit" class="pure-button pure-button-primary">Siguiente</button>
+</form>
+{% endblock %}

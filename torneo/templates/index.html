@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cuadrangular</title>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/grids-responsive-min.css">
+</head>
+<body>
+<style>
+	body {
+		line-height: 1.5em;
+		font-size: 12px;
+		align-items: center;
+	}
+
+	table {
+		margin-bottom: 10px;
+		text-align: center;
+		align-items: center;
+	}
+
+	/* pre {
+		white-space: pre-wrap;
+	} */
+
+	.pure-menu.pure-menu-fixed {
+		border-bottom: none;
+		z-index: 4;
+		align-items: center;
+	}
+
+	.pure-table thead {
+		text-align: center;
+		align-items: center;
+	}
+
+	.background-cuadrangular{
+		background-image: url(https://as01.epimg.net/masdeporte/imagenes/2021/08/18/reportajes/1629287252_471087_1632935001_noticiareportajes_grande.jpg);
+		height: 1260px;
+	}
+	.align-items{
+		text-align: center;
+		padding-top: 5%;
+	}
+	.text-color{
+		color: #ffff;
+		font-size: 70px;
+	}
+
+	@media (min-width: 48em) {
+
+		body {
+			font-size: 16px;
+		}
+		.main {
+			padding: 1em;
+		}
+		.home-menu {
+			text-align: center;
+			align-items: center;
+		}
+		.home-menu ul {
+			float: right;
+		}
+	}
+
+	@media (max-width: 425px) {
+
+		.home-menu {
+			font-size: 70%
+		}
+	}
+</style>
+<style scoped>
+	.button-success,
+	.button-error,
+	.button-warning,
+	.button-secondary {
+		color: white;
+		border-radius: 4px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	}
+
+	.button-success {
+		background: rgb(28, 184, 65);
+	}
+
+	.button-error {
+		background: rgb(98, 60, 202);
+	}
+
+	.button-warning {
+		background: rgb(180, 49, 114);
+	}
+
+	.button-secondary {
+		background: rgb(66, 184, 221);
+	}
+</style>
+<style>
+	.header {
+		display: inline-block;
+	}
+
+	.main {
+		padding: 2em;
+		color: black;
+	}
+</style>
+
+<div class="background-cuadrangular">
+	<div class="main align-items">
+		<h2 class="text-color">Cuadrangular</h2>
+		{% block body %}{% endblock %}
+	</div>
+</div>
+{% if msg %}
+	{{msg}}
+{% endif %}
+</div>
+</body>
+</html>

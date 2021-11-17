@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block body %}
+<style>
+	.align-table{
+		text-align: -webkit-center;
+	}
+	.color-text{
+		color: #ffff;
+	}
+</style>
+<div class=registroEquipos>
+	<form class="pure-form pure-form-stacked" action="{% url 'tablaPosiciones' %}" method=post>
+		{% csrf_token %}
+		<p class="color-text">Ingrese los resultados</p>
+		<div class="align-table">
+			<table class="pure-table pure-table-bordered">
+				<thead>
+					<tr>
+						<th>Equipo 1</th>
+						<th>Goles</th>
+						<th>Equipo 2</th>
+						<th>Goles</th>
+					</tr>	
+				</thead>
+				<tbody>
+					{% for juego in matches %}
+						<tr>
+							<td class="color-text"> {{juego.0}}</td>
+							<td><input id="goalsT1M{{ forloop.counter0 }}" name="goalsT1M{{ forloop.counter0 }}"+ type="number" min="0" required></td>
+							<td class="color-text"> {{juego.1}}</td>
+							<td><input id="goalsT2M{{ forloop.counter0 }}" name="goalsT2M{{ forloop.counter0 }}"+ type="number" min="0" required></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<button type="submit" class="pure-button pure-button-primary">Siguiente</button>
+	</form>
+</div>
+{% endblock %}
